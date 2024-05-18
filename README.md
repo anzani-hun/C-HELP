@@ -12,13 +12,9 @@ string fajlneve = "adatok.txt";
 StreamWriter iras = new StreamWriter(fajlneve, false, Encoding.Default);
 
 double r = 23.4;
-
 iras.WriteLine("Programozó = ÉN");
-
 iras.WriteLine("PI = {0}", Math.PI);
-
 iras.WriteLine("sugár = {0}", r);
-
 iras.WriteLine("Kerület = {0}", 2 * r * Math.PI);
 
 iras.Close();
