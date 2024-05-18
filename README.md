@@ -143,7 +143,7 @@ public partial class Form1 : Form
         DataSet ds = new DataSet();
         adapter.Fill(ds);
 
-        **//datagridhez kell, hogy bekerüljön az adat:**
+        //datagridhez kell, hogy bekerüljön az adat:
         BindingSource bs = new BindingSource();
         bs.DataSource = ds.Tables[0];
         dataGridView1.DataSource = bs;
