@@ -119,7 +119,7 @@ iras.Close();
 ```ruby
 public partial class Form1 : Form
 {
-    //
+    //deklarál egy MySqlConnection típusú változót, amely később az adatbáziskapcsolatot fogja képviselni
     MySqlConnection connection;
 
     public Form1()
