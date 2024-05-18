@@ -112,7 +112,7 @@ iras.Close();
 
 
 
-# WinFORM - DATAGRID
+# WinFORM - SQL adatok megjelenítése egy DATAGRID-ben
 
 ---
 
