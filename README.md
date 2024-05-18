@@ -1,5 +1,3 @@
----
-
 # CSV fájlban, ha van fejléc akkor:
 
 `sr.ReadLine();`
