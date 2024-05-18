@@ -49,7 +49,7 @@ iras.Close();
 ---
 ---
 
-# egy listából: KEREKÍTÉS, SUM, AVG, MIN, MAX, FIRST, LAST
+# KEREKÍTÉS
 
 ```ruby
             double ertek = 123.456789;
@@ -57,6 +57,9 @@ iras.Close();
             Console.WriteLine(kerekitettErtek); // Kiírja: 123.46
 ```
 ---
+
+
+# egy listából: SUM, AVG, MIN, MAX, FIRST, LAST
 
 ```ruby
             double atlagFizetes = probaLista.Average(p => p.Fizetes);
