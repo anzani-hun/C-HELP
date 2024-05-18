@@ -98,3 +98,46 @@ iras.Close();
                 // Kiírjuk az utolsó elem nevét
                 Console.WriteLine("Utolsó ember keresztneve: " + probaLista[probaLista.Count - 1].Keresztnev);
 ```
+
+
+
+
+# WinFORM - DATAGRID
+
+---
+
+```ruby
+public partial class Form1 : Form
+{
+    //
+    MySqlConnection connection;
+
+    public Form1()
+    {
+        InitializeComponent();
+
+
+        //sql parancs meghatározása, amit le akarunk kérni:
+        string sqlParancs = "SELECT rank, building_name, floors FROM buildings";
+
+        //MySQL adatbázishoz való kapcsolat meghatározása:
+        connection = new MySqlConnection("server=localhost;userid=root;password=;database=tallest_buildings");
+        
+        //kapcsolat nyitása:
+        connection.Open();
+
+        //MySqlDataAdapter a MySQL adatbázisokkal való munkavégzés során, adapterként szolgál,
+        //lehetővé teszi az adatok lekérdezését és frissítését az adatbázis és a .NET alkalmazás között
+        MySqlDataAdapter adapter = new MySqlDataAdapter(sqlParancs, connection);
+
+        DataSet ds = new DataSet();
+        adapter.Fill(ds);
+
+        //datagridhez kell, hogy bekerüljön az adat:
+        BindingSource bs = new BindingSource();
+        bs.DataSource = ds.Tables[0];
+        dataGridView1.DataSource = bs;
+
+    }
+}
+```
