@@ -52,11 +52,11 @@ iras.Close();
 # egy listából: KEREKÍTÉS, SUM, AVG, MIN, MAX, FIRST, LAST
 
 ```ruby
-double ertek = 123.456789;
-double kerekitettErtek = Math.Round(ertek, 2); // Két tizedesjegyre kerekít
-Console.WriteLine(kerekitettErtek); // Kiírja: 123.46
+            double ertek = 123.456789;
+            double kerekitettErtek = Math.Round(ertek, 2); // Két tizedesjegyre kerekít
+            Console.WriteLine(kerekitettErtek); // Kiírja: 123.46
 ```
-
+---
 
 ```ruby
             double atlagFizetes = probaLista.Average(p => p.Fizetes);
