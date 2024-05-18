@@ -151,3 +151,47 @@ public partial class Form1 : Form
     }
 }
 ```
+
+
+---
+---
+
+
+# WinFORM - DATAGRID - TÖRLÉS adatbázisból és DataGridből is
+
+
+
+```ruby
+
+ private void buttonTorles_Click(object sender, EventArgs e)
+ {
+  
+     if (dataGridView1.SelectedRows.Count > 0)
+     {
+         //az első oszlop tartalmazza az azonosítót (rank)
+         int rank = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["rank"].Value);
+
+         //SQL-ból TÖRLÉS parancsa:
+         string sqlbolTorol = "DELETE FROM buildings WHERE rank = @rank";
+         MySqlCommand command = new MySqlCommand(sqlbolTorol, connection);
+         command.Parameters.AddWithValue("@rank", rank);
+
+         // a törlés sql parancs végrehajtása
+         int result = command.ExecuteNonQuery();
+
+         if (result > 0)
+         {
+             //HA sikeres a törlés az adatbázisból,akkor távolítsuk el a sort a DataGrid-ből is!
+             dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+             MessageBox.Show("A kijelölt sor törölve az adatbázisból és a DataGridView-ból.");
+         }
+         else
+         {
+             MessageBox.Show("A sor törlése nem sikerült az adatbázisból.");
+         }
+     }
+     else
+     {
+         MessageBox.Show("Kérlek, válassz ki egy EGÉSZ sort a törléshez.");
+     }
+```
