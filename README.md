@@ -20,6 +20,27 @@ int[] tomb = new int[] {1, 2, 3, 4, 5, 6};
             Console.WriteLine($"A tömb elemei között: {darab} db 5-nél nagyobb szám van!");
 ```
 
+
+
+---
+
+
+# összegzés:
+
+```ruby
+ int[] tomb = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
+            int osszeg = 0;
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                osszeg = osszeg + tomb[i];
+            }
+            Console.WriteLine($"A tömb elemeinek értékének az összege: {osszeg}");
+```
+
+
+
+
+
 ---
 
 
