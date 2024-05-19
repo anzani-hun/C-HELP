@@ -173,6 +173,41 @@ iras.Close();
 ```
 
 
+---
+
+
+# WinFORM - C# MySqlConnector;
+
+```ruby
+            using MySql.Data.MySqlClient;
+
+            namespace WinFORM_gyak_epuletek
+            {
+                public partial class Form1 : Form
+                {
+                    //deklarál egy MySqlConnection típusú változót, amely később az adatbáziskapcsolatot fogja képviselni
+                    MySqlConnection connection;
+
+                    public Form1()
+                    {
+                        InitializeComponent();
+
+
+                        //sql parancs meghatározása, amit le akarunk kérni:
+                        string sqlParancs = "SELECT rank, building_name, floors FROM buildings";
+
+                        //MySQL adatbázishoz való kapcsolat meghatározása:
+                        connection = new MySqlConnection("server=localhost;userid=root;password=;database=tallest_buildings");
+
+                        //kapcsolat nyitása:
+                        connection.Open();
+
+
+```
+
+---
+
+
 
 
 # WinFORM - SQL adatok megjelenítése egy DATAGRID-ben
