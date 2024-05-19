@@ -4,6 +4,30 @@
 
 ---
 
+
+# megszámlálás:
+
+```ruby
+int[] tomb = new int[] {1, 2, 3, 4, 5, 6};
+            int db = 0;
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                if (tomb[i] > 5)
+                {
+                    darab++;
+                }
+            }
+            Console.WriteLine($"A tömb elemei között: {darab} db 5-nél nagyobb szám van!");
+```
+
+---
+
+
+
+
+
+
+
 # STREAMWRITER használata TXT írásra:
 
 ```ruby
