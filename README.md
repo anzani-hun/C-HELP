@@ -175,6 +175,94 @@ iras.Close();
 
 ---
 
+# LAMBDA operátor FOREACH-ben
+
+```ruby
+namespace Dolgozok_Console_Winform
+{
+    class Program
+    {
+        static List<Dolgozo> dolgozok = new List<Dolgozo>();
+        static void Main(string[] args)
+        {
+            beolvasas();
+            feladat01(); //Hány fő dolgozó
+            feladat02(); //Legmagasabb keresetű dolgozó neve
+            feladat03(); //Egyes részlegeken hányan dolgoznak
+            feladat04(); //Az asztalos műhelybe dolgozók neve
+
+            //kiiras(dolgozok);
+            Console.WriteLine("Program vége!");
+            Console.ReadKey();
+        }
+
+        private static void feladat04()
+        {
+            Console.WriteLine("4. feladat:");
+            foreach (var item in dolgozok.FindAll(x => x.reszleg == "asztalosműhely"))
+            {
+                Console.WriteLine($"\t{item.nev}");
+            }
+        }
+
+        private static void feladat03()
+
+        {
+
+            Console.WriteLine("3. feladat:");
+
+            foreach(var item in dolgozok.GroupBy(x => x.reszleg).Select(y => new {reszleg =y.Key , letszam = y.Count() } ))
+
+            { 
+
+                Console.WriteLine($"\t{item.reszleg}: {item.letszam}");
+
+            }
+        }
+        private static void feladat02()
+
+        {
+            Console.WriteLine("2. feladat:");
+            Dolgozo max = dolgozok.Find(x => x.ber == dolgozok.Max(y => y.ber)); //lambda operator
+            Console.WriteLine($"\t A{max.nev} dolgozo fizetése:{max.ber} Ft");
+        }
+        private static void feladat01()
+        {
+            Console.WriteLine("1. feladat:");
+            Console.WriteLine($"\t A dogozók száma {dolgozok.Count} fő.");
+        }
+        private static void kiiras(List<Dolgozo> dolgozok)
+        {
+            foreach (Dolgozo item in dolgozok)
+            {
+                Console.WriteLine(item.nev);
+            }
+        }
+        private static void beolvasas()
+        {
+            string filename = "dolgozok.csv";
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                reader.ReadLine(); // fejléc átugrása
+                while (!reader.EndOfStream)
+                {
+
+                    string[] line = reader.ReadLine().Replace('"',' ').Split(',');
+
+                    Dolgozo dolgozo = new Dolgozo(line[0].Trim(), line[1].Trim(), line[2].Trim(), int.Parse(line[3].Trim()),int.Parse(line[4].Trim()));
+
+                    dolgozok.Add(dolgozo);
+                }
+            }
+        }
+    }
+}
+
+```
+
+
+---
+
 ---
 
 
