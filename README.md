@@ -183,7 +183,8 @@ namespace Dolgozok_Console_Winform
     class Program
     {
         static List<Dolgozo> dolgozok = new List<Dolgozo>();
-        static void Main(string[] args)
+
+            static void Main(string[] args)
         {
             beolvasas();
             feladat01(); //Hány fő dolgozó
@@ -238,6 +239,7 @@ namespace Dolgozok_Console_Winform
                 Console.WriteLine(item.nev);
             }
         }
+
         private static void beolvasas()
         {
             string filename = "dolgozok.csv";
