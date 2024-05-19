@@ -38,11 +38,29 @@ int[] tomb = new int[] {1, 2, 3, 4, 5, 6};
 ```
 
 
+---
 
+
+# MIN és MAX kiválasztása:
+
+```ruby
+            int[] tombLista = new int[] { 1, 10, 30, 50, 60, 55 };
+            int min = tombLista[0];
+            int max = tombLista[0];
+
+            for (int i = 0; i < tombLista.Length; i++)
+            {
+                if (tombLista[i] > max)
+                {
+                    max = tombLista[i];
+                }
+            }
+            Console.WriteLine($"A legnagyobb szám: {max}");
+            Console.WriteLine($"A legkisebb szám: {min}");
+```
 
 
 ---
-
 
 
 
