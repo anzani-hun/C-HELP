@@ -264,3 +264,16 @@ public partial class Form1 : Form
          MessageBox.Show("Kérlek, válassz ki egy EGÉSZ sort a törléshez.");
      }
 ```
+
+
+
+
+
+# WinForm | osztályban alkalmazni | egy lista megjelenítésénél a nevét adja vissza:
+
+```ruby
+             public override string ToString()
+             {
+                 return megnevezes;
+             }
+```
