@@ -17,9 +17,14 @@ int[] tomb = new int[] {1, 2, 3, 4, 5, 6};
                     darab++;
                 }
             }
-            Console.WriteLine($"A tömb elemei között: {darab} db 5-nél nagyobb szám van!");
+            Console.WriteLine($"A tömb elemei között: {darab} db 5-nál nagyobb szám van!");
 ```
+```ruby
+osztályból:
+static List<Epulet> epuletLista = new List<Epulet>();
+Console.WriteLine($"Az összes beolvasott épületek száma: {epuletLista.Count}!");
 
+```
 
 
 ---
